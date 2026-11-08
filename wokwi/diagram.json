@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "author": "ErrP robot arm",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "base",
+      "top": -170,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "grip",
+      "top": -170,
+      "left": 220,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledok",
+      "top": -60,
+      "left": 420,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledoops",
+      "top": -60,
+      "left": 480,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 40,
+      "left": 400,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 40,
+      "left": 460,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "base:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "base:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "base:PWM",
+      "uno:9",
+      "orange",
+      []
+    ],
+    [
+      "grip:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "grip:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "grip:PWM",
+      "uno:10",
+      "orange",
+      []
+    ],
+    [
+      "uno:11",
+      "r1:1",
+      "green",
+      []
+    ],
+    [
+      "r1:2",
+      "ledok:A",
+      "green",
+      []
+    ],
+    [
+      "ledok:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "uno:12",
+      "r2:1",
+      "red",
+      []
+    ],
+    [
+      "r2:2",
+      "ledoops:A",
+      "red",
+      []
+    ],
+    [
+      "ledoops:C",
+      "uno:GND.2",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
